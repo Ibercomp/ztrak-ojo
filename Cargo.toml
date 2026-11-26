@@ -1,0 +1,31 @@
+[package]
+name = "ztrak-ojo"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+anyhow = "=1.0.104"
+dirs = "=7.0.0"
+env_logger = "=0.11.11"
+log = "=0.4.35"
+ndarray = "=0.17.2"
+ort = "=2.0.0-rc.15"
+parking_lot = "=0.13.0"
+serde = { version = "=1.0.229", features = ["derive"] }
+serde_json = "=1.0.154"
+serialport = { version = "=4.8.1", default-features = false }
+
+# Linux keeps OpenGL. Windows uses the path proven on the Arc A310 by ZTrak:
+# DirectX 12 for the windows and DirectML for the pose model.
+[target.'cfg(not(windows))'.dependencies]
+eframe = { version = "=0.37.0", default-features = false, features = ["default_fonts", "glow", "x11", "wayland"] }
+
+[target.'cfg(windows)'.dependencies]
+eframe = { version = "=0.37.0", default-features = false, features = ["default_fonts", "wgpu"] }
+ort = { version = "=2.0.0-rc.15", features = ["directml"] }
+
+[profile.dev]
+opt-level = 1
+
+[profile.release]
+debug = 1

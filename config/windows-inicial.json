@@ -1,0 +1,81 @@
+{
+  "camera": {
+    "source": "",
+    "width": 1280,
+    "height": 720,
+    "fps": 30,
+    "input_format": "mjpeg",
+    "rotate_180": true
+  },
+  "vision": {
+    "detector_model": "models/yolox_nano_humanart_416.onnx",
+    "pose_model": "models/rtmpose-m_body7_256x192.onnx",
+    "detector_size": 416,
+    "pose_width": 192,
+    "pose_height": 256,
+    "detector_threshold": 0.35,
+    "keypoint_threshold": 0.35,
+    "threads": 4,
+    "max_poses": 3,
+    "device": "auto"
+  },
+  "focus": {
+    "lost_timeout": 0.8,
+    "steal_ratio": 0.0,
+    "w_size": 1.0,
+    "w_center": 0.4,
+    "w_keypoints": 0.8,
+    "min_hits": 3
+  },
+  "mount": {
+    "mode": "Pupil",
+    "camera_xyz": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "camera_ypr": [
+      0.0,
+      0.0,
+      -15.0
+    ],
+    "horizontal_fov": 65.0,
+    "depth_mode": "Manual",
+    "depth_m": 2.0,
+    "shoulder_width_m": 0.4,
+    "trim": [
+      0.0,
+      0.0
+    ],
+    "invert": [
+      true,
+      true
+    ],
+    "pupil_gain": 0.95,
+    "deadband_deg": 0.5,
+    "max_speed": 80.0,
+    "smooth_cutoff": 5.5,
+    "pupil_scale": [
+      2.7,
+      2.9
+    ],
+    "backlash_deg": [
+      0.0,
+      0.0
+    ]
+  },
+  "eye_address": "192.168.1.121:80",
+  "mirror_preview": true,
+  "uart": true,
+  "uart_port": "",
+  "sleep_enabled": true,
+  "sleep_after_s": 12.0,
+  "sleep_for_s": 5.0,
+  "reset_pause_s": 2.0,
+  "boredom_enabled": true,
+  "boredom_after_s": 10.0,
+  "droop_s": 1.4,
+  "sleep_slit": 32.0,
+  "wake_motion_fraction": 0.03,
+  "uart_baud": 250000
+}

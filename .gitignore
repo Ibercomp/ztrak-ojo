@@ -1,0 +1,12 @@
+/target/
+*.log
+
+# Capturas y binarios: se conservan fuera del historial de fuentes.
+/diagnosticos/
+*.mkv
+*.mp4
+*.jsonl
+.env
+.env.*
+/dist/
+/third_party/
